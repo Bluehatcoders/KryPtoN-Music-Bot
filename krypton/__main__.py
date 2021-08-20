@@ -66,10 +66,10 @@ async def repo(_, message):
 @app.on_message(filters.text & cmd_filter('ping'))
 async def ping(_, message):
     start = datetime.now()
-    msg = await send('`Pong!`')
+    msg = await send('`⚡`')
     end = datetime.now()
     latency = (end - start).microseconds / 1000
-    await msg.edit(f"**Pong!**\n`{latency} ms`")
+    await msg.edit(f"**Jinda hu sir itni jaldi nhi marunga**\n`{latency} ms me aapke bato ka reply deta hu dekh rhe ho`")
 
 @app.on_message(filters.text & cmd_filter('donation'))
 async def donation(_, message):
@@ -78,21 +78,21 @@ async def donation(_, message):
 @app.on_message(filters.text & cmd_filter('join'))
 async def join(_, message):
     if group_calls.is_connected:
-        await message.reply_text('Bot already joined!')
+        await message.reply_text('Bot already join hai ab kya tere ghar me aajaye?')
         return
     group_calls.client = app
     await group_calls.start(message.chat.id)
-    await message.reply_text('Succsessfully joined!')
+    await message.reply_text('Khusi manao jaoin ho gya XD')
 
 @app.on_message(filters.text & cmd_filter('mute'))
 async def mute(_, message):
     group_calls.set_is_mute(is_muted=True)
-    await message.reply_text('Succsessfully muted bot!')
+    await message.reply_text('Succsessfully muted \nab nhi bol payega ye XD')
 
 @app.on_message(filters.text & cmd_filter('unmute'))
 async def unmute(_, message):
     group_calls.set_is_mute(is_muted=False)
-    await message.reply_text('Succsessfully unmuted bot!')
+    await message.reply_text('Succsessfully unmuted \nja bol le wo bhi kya yaad rakhega')
 
 @app.on_message(filters.text & cmd_filter('volume'))
 async def volume(_, message):
@@ -108,29 +108,29 @@ async def stop(_, message):
     group_calls.stop_playout()
     queue.clear()
     playing = False
-    await message.reply_text('Succsessfully stopped song!')
+    await message.reply_text('Chal band kar diya gana XD')
 
 @app.on_message(filters.text & cmd_filter('leave'))
 async def leave(_, message):
     global playing
     if not group_calls.is_connected:
-        await message.reply_text('Bot already leaved!')
+        await message.reply_text('Abe mai hu kha jo leave karu! Ajib aadmi ho tum bhi')
         return
     await group_calls.stop()
     queue.clear()
     playing = False
     group_calls.input_filename = ''
-    await message.reply_text('Succsessfully leaved!')
+    await message.reply_text('Bahut gande ho tum mujhe wha se leave karwa diya :~(')
 
 @app.on_message(filters.text & cmd_filter('kill'))
 async def killbot(_, message):
-    await send("__**Killed!__**")
+    await send("__**Mar diya 😈!__**")
     quit()
 
 @app.on_message(filters.text & cmd_filter('play'))
 async def queues(_, message):
     if not group_calls.is_connected:
-        await message.reply_text('Bot not joined on Voice Calls!')
+        await message.reply_text('Abe pahle bot ko VC to join karwa!')
         return
     usage = "**Usage:**\n__**/play youtube Song_Name**__"
     if len(message.command) < 3:
@@ -158,10 +158,10 @@ async def queues(_, message):
 async def skip(_, message):
     global playing
     if len(queue) == 0:
-        await message.reply_text("__**Queue Is Empty, Just Like Your Life.**__")
+        await message.reply_text("__**Queue Is Empty. #sedlyf Shi bta teri girlfriend/boyfriend nhi na hai?**__")
         return
     playing = False
-    await message.reply_text("__**Skipped!**__")
+    await message.reply_text("__**Hue hue Hta diya wo gana!**__")
     await play()
 
 @app.on_message(filters.text & cmd_filter('queue'))
@@ -174,7 +174,7 @@ async def queue_list(_, message):
             i += 1
         await message.reply_text(text)
     else:
-        await message.reply_text("__**Queue Is Empty, Just Like Your Life.**__")
+        await message.reply_text("__**Queue Is Empty. #sedlyf Shi bta teri girlfriend/boyfriend nhi na hai?**__")
 
 # Queue handler
 
@@ -293,7 +293,7 @@ async def jiosaavn(requested_by, query):
 async def ytplay(requested_by, query):
     global playing
     ydl_opts = {"format": "bestaudio"}
-    m = await send(f"__**Searching for {query} on YouTube.**__")
+    m = await send(f"__**{query} Ye jo tera gana hai usko mai youtube pe dhundh rha hu wait kar**__")
     try:
         results = await arq.youtube(query, 1)
         link = f"https://youtube.com{results[0].url_suffix}"
@@ -302,28 +302,28 @@ async def ytplay(requested_by, query):
         duration = results[0].duration
         views = results[0].views
         if time_to_seconds(duration) >= 1800:
-            await m.edit("__**Bruh! Only songs within 30 Mins.**__")
+            await m.edit("__**Abe yaar bas 30min ke andar ke hi gane bajwa mere se Din bhar majduri karwata hai saram nhi aati?**__")
             playing = False
             return
     except Exception as e:
-        await m.edit("__**Found No Song Matching Your Query.**__")
+        await m.edit("__**Abe kaun se duniya ka gana diye ho be mila hi nhi #sedlyf mujhe pakka pta hai teri koi girlfriend nhi hogi hai na?**__")
         playing = False
         print(str(e))
         return
-    await m.edit("__**Processing Thumbnail.**__")
+    await m.edit("__**Thumbnail bna rha hu wait kar**__")
     await generate_cover(requested_by, title, views, duration, thumbnail)
-    await m.edit("__**Downloading Music.**__")
+    await m.edit("__**Youtube devta se gane la rha hu XD**__")
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         info_dict = ydl.extract_info(link, download=False)
         audio_file = ydl.prepare_filename(info_dict)
         ydl.process_info(info_dict)
-    await m.edit("__**Transcoding.**__")
+    await m.edit("__**Chhu mantar ye jadu chu hai gana bajadu mai**__")
     os.rename(audio_file, "audio.webm")
     transcode("audio.webm")
     await m.delete()
     m = await app.send_photo(
         chat_id=sudo_chat_id,
-        caption=f"**Playing** __**[{title}]({link})**__ **Via YouTube.**",
+        caption=f"**Abhi ye baj rha hai** __**[{title}]({link})**__ **Youtube, SATYA aur Shubham devta ki kripa se**",
         photo="final.png",
     )
     os.remove("final.png")
