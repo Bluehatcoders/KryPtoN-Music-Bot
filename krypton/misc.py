@@ -1,29 +1,23 @@
-HELP_TEXT = """__**I Can Play Music In The Voice Chat**__
+HELP_TEXT = """__**Dekho bhai mai koi devta ye sab nhi hu bas mai VC me music play karta hu**__
 
-**/start** __To Start The bot.__
-**/help** __To Show This Message.__
-**/ping** __To Show Latency Bot.__
-**/skip** __To Skip The Current Playing Music.__
-**/play** __youtube/saavn/deezer song_name__
-**/stop** __To Stop Playing Music.__
-**/join** __To Join A Voice Chat.__
-**/leave** __To Leave A Voice Chat.__
-**/mute** __To Mute A Bot.__
-**/unmute** __To Unmute A Bot.__
+**/start** __Es bot ko start karne ke liye__
+**/help** __Ye msg dikhane ke liye__
+**/ping** __Jinda hai ya mar gya janne ke liye__
+**/skip** __Dosto ke gane skip karke apne gane bajane ke liye__
+**/play** __apne song ka name__
+**/stop** __Mujhe thori rahat dene ke liye gane band karke__
+**/join** __VC join karwane ke liye__
+**/leave** __VC se leave karwane ke liye__
+**/mute** __Mute karne ke liye__
+**/unmute** __Unmute karne ke liye__
 **/volume** __<1-200>__
 **/kill** __To Kill A Sevice Bot.__
-**/repo** __To Source Code This Not.__
-**/donation** __To Give Me A Coffe.__"""
+**/repo** __Hue hue__
+**/donation** __To Give Me A Coffe / Girlfreind.__"""
 
-START_TEXT = "__**Hi I'm KryPtoN Music Bot. I will sing for you on Voice Call Telegram, Hit /help for look my features.**__"
+START_TEXT = "__**Dekho bhai/behen Mai koi devta nhi hu mai bas VC me join hoke musics play karta hu bas isse jyada mujhe SATYA aur Shubham ne kuch nhi sikhaya so maaf karna. \nAur ha mere feature ko bhi ek bar test kar lo XD**__"
 
-REPO_TEXT = """Source code this bot 🤖
-Source code: [Github](https://github.com/Kry9toN/KryPtoN-Music-Bot)
-License: [ GPL-3.0 License](https://github.com/Kry9toN/KryPtoN-Music-Bot/blob/master/LICENSE.md)"""
+REPO_TEXT = """Mai nhi bataunga Hue hue"""
 
-DONATION_TEXT = """♥️Donation List♥️
-Indonesia:
-[Saweria](https://saweria.co/donate/Kry9toN)
-Internasional:
-[Paypal](https://www.paypal.me/KomodoOS)
+DONATION_TEXT = """Bhai kuch nhi chaiye bas ek Girlfriend dila de Plzz
 """
