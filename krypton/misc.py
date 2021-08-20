@@ -1,4 +1,4 @@
-HELP_TEXT = """__**Dekho bhai mai koi devta ye sab nhi hu bas mai VC me music play karta hu**__
+HELP_TEXT = """__**Dekho bhai mai koi devta ye sab nhi hu mai hu 𝗗𝗮𝘆𝗻𝗮𝗺𝗶𝗰 𝖝 𝗠𝘂𝘀𝗶𝗰 𝗕𝗼𝘁 mai bas bas mai VC me music play karta hu**__
 
 **/start** __Es bot ko start karne ke liye__
 **/help** __Ye msg dikhane ke liye__
@@ -15,7 +15,7 @@ HELP_TEXT = """__**Dekho bhai mai koi devta ye sab nhi hu bas mai VC me music pl
 **/repo** __Hue hue__
 **/donation** __To Give Me A Coffe / Girlfreind.__"""
 
-START_TEXT = "__**Dekho bhai/behen Mai koi devta nhi hu mai bas VC me join hoke musics play karta hu bas isse jyada mujhe SATYA aur Shubham ne kuch nhi sikhaya so maaf karna. \nAur ha mere feature ko bhi ek bar test kar lo XD**__"
+START_TEXT = "__**Dekho bhai/behen Mai koi devta nhi hu mai hu 𝗗𝗮𝘆𝗻𝗮𝗺𝗶𝗰 𝖝 𝗠𝘂𝘀𝗶𝗰 𝗕𝗼𝘁. Mai bas VC me join hoke musics play karta hu bas isse jyada mujhe SATYA aur Shubham ne kuch nhi sikhaya so maaf karna. \nAur ha mere feature ko bhi ek bar test kar lo XD**__"
 
 REPO_TEXT = """Mai nhi bataunga Hue hue"""
 
