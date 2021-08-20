@@ -1,7 +1,7 @@
 
 {
-    "name": "KryPtoN-Music-Bot",
-    "description": "Tele Voice Calls Music.",
+    "name": "Dynamic Music Bot",
+    "description": "Mai jane bajata hu",
     "keywords": [
       "telegram",
       "voicechat",
@@ -10,7 +10,7 @@
       "pyrogram",
       "callsmusic"
     ],
-    "repository": "https://github.com/vincreator/KryPtoN-Music-Bot",
+    "repository": "https://github.com/Bluehatcoders/mainhibataunga",
     "stack": "container",
     "env": {
       "SESSION_STRING": {
